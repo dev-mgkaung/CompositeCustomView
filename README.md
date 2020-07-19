@@ -1,4 +1,4 @@
 # PADC-X-RecyclerView-YPST
 Demo of RecyclerView
 
-![Screenshot](https://user-images.githubusercontent.com/22901781/73045940-6183bd80-3e9e-11ea-8a0a-5f733b9850e6.png)
+![Screenshot](https://raw.githubusercontent.com/dev-mgkaung/CompositeCustomView/master/Screenshot_2020-07-19-19-05-29-544_com.padcmyanmar.padcx.padc_x_recyclerview_ypst.jpg)
