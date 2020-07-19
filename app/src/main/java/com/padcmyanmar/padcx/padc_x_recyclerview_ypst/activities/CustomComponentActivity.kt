@@ -21,7 +21,9 @@ class CustomComponentActivity : AppCompatActivity() {
         sadButton.setOnClickListener {
             emotionalFaceView.happinessState = EmotionalFaceView.SAD
         }
-
+        normalButton.setOnClickListener {
+            emotionalFaceView.happinessState = EmotionalFaceView.NORMAL
+        }
         btnNavigate.setOnClickListener {
             startActivity(FanControlActivity.newIntent(this))
         }

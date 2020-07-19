@@ -26,7 +26,7 @@ class RoundedCornerImageView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
 
-        val rectangle = RectF(0f, 0f, width.toFloat(), height.toFloat())
+        val rectangle = RectF(10f, 10f, width.toFloat(), height.toFloat())
 
         path.addRoundRect(rectangle, cornerRadius, cornerRadius, Path.Direction.CCW)
 

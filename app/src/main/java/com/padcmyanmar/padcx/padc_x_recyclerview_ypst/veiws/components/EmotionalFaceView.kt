@@ -101,16 +101,15 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
            percentages of the size: (32%, 23%, 43%, 50%)
          */
         val leftEyeRect = RectF(size * 0.32f, size * 0.23f, size * 0.43f, size * 0.50f)
-
         canvas.drawOval(leftEyeRect, paint)
 
         /* 3 for right eye
-           percentages of the size: (57%, 23%, 68%, 50%)
-         */
+       percentages of the size: (57%, 23%, 68%, 50%)
+     */
         val rightEyeRect = RectF(size * 0.57f, size * 0.23f, size * 0.68f, size * 0.50f)
-
-        // 4
         canvas.drawOval(rightEyeRect, paint)
+        // 4
+
 
     }
 
@@ -131,6 +130,7 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
                draw a curved path from the starting point and through (x1,y1) that ends with (x2,y2)
                (50,80) , (78,70)
             */
+
             mouthPath.quadTo(size * 0.50f, size * 0.80f, size * 0.78f, size * 0.70f)
 
             /*
@@ -139,8 +139,13 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
              */
             mouthPath.quadTo(size * 0.50f, size * 0.90f, size * 0.22f, size * 0.70f)
 
-        } else {
-            
+        } else  if (happinessState == NORMAL) {
+            mouthPath.quadTo(size * 0.50f, size * 0.80f, size * 0.78f, size * 0.70f)
+            mouthPath.quadTo(size * 0.50f, size * 1.0f, size * 0.22f, size * 0.70f)
+            mouthPath.quadTo(size * 0.5f, size * 0.50f, size * 0.78f, size * 0.7f)
+            mouthPath.quadTo(size * 0.5f, size * 1.0f, size * 0.22f, size * 0.7f)
+        }
+        else if (happinessState == SAD) {
             // 3
             mouthPath.quadTo(size * 0.5f, size * 0.50f, size * 0.78f, size * 0.7f)
             mouthPath.quadTo(size * 0.5f, size * 0.60f, size * 0.22f, size * 0.7f)
@@ -168,12 +173,13 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
     companion object {
 
         private const val DEFAULT_FACE_COLOR = Color.YELLOW
-        private const val DEFAULT_EYES_COLOR = Color.BLACK
-        private const val DEFAULT_MOUTH_COLOR = Color.BLACK
-        private const val DEFAULT_BORDER_COLOR = Color.BLACK
+        private const val DEFAULT_EYES_COLOR = Color.RED
+        private const val DEFAULT_MOUTH_COLOR = Color.BLUE
+        private const val DEFAULT_BORDER_COLOR = Color.WHITE
         private const val DEFAULT_BORDER_WIDTH = 4.0f
 
         const val HAPPY = 0L
         const val SAD = 1L
+        const val NORMAL = 2L
     }
 }

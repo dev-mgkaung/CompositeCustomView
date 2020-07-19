@@ -1,7 +1,9 @@
 package com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods
 
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.R
@@ -116,6 +118,7 @@ class StateProgressViewPod @JvmOverloads constructor(
         tvCircle3.text = "3"
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun setCircle4Selected() {
         tvCircle4.background = context.getDrawable(R.drawable.shape_circle_accent)
         view4.setBackgroundColor(ContextCompat.getColor(context, R.color.colorAccent))
